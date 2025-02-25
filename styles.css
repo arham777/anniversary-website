@@ -1,0 +1,637 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff0f6;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  /* Glowing border decoration */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 6px solid rgba(255, 192, 203, 0.2);
+    pointer-events: none;
+    z-index: 999;
+    animation: glow 3s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 10px rgba(255, 182, 193, 0.5); }
+    to   { box-shadow: 0 0 20px rgba(255, 105, 180, 0.8); }
+  }
+  
+  /* Greeting Section */
+  .greeting-section {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 30px;
+  }
+  
+  .greeting-section h1 {
+    font-size: 2.5rem;
+    animation: fadeInOut 4s infinite;
+  }
+  
+  /* Keyframes for fade in/out */
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    25%, 75% { opacity: 1; }
+  }
+  
+  /* Quotes Section */
+  .quotes-section {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 10px;
+  }
+  
+  #quotes-carousel {
+    font-size: 1.5rem;
+    animation: fadeInOut 4s infinite;
+  }
+  
+  /* Gallery Section */
+  .gallery-section {
+    position: relative;
+    padding: 30px 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: linear-gradient(rgba(255, 240, 246, 0.7), rgba(255, 240, 246, 0.7)), url('assets/mem/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .gallery-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+  }
+  
+  .gallery-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,192,203,0.2) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .gallery-section h2 {
+    color: #333;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 0 20px;
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .gallery-item:hover .caption {
+    opacity: 1;
+  }
+  
+  /* Video Message Section */
+  .video-message-section {
+    text-align: center;
+    padding: 30px 20px;
+    background: #f9e8f9;
+    margin-bottom: 10px;
+  }
+  
+  .video-message-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .video-message-section video {
+    max-width: 80%;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+  }
+  
+  /* Virtual Bouquet Section */
+  .bouquet-section {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 10px;
+  }
+  
+  #bouquet-display {
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-in forwards;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .bouquet-flowers .flower {
+    font-size: 2rem;
+    margin: 0 5px;
+    animation: floatBouquet 3s infinite;
+  }
+  
+  @keyframes floatBouquet {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* Fade In Keyframes */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Hidden Message Section - Fancy Button */
+  .hidden-message-section {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 10px;
+  }
+  
+  .fancy-btn {
+    background: linear-gradient(45deg, #f57478, #fdbead);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+  }
+  
+  .fancy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 12px rgba(255, 105, 180, 0.5);
+  }
+  
+  /* Letter Section (Typewriter) */
+  .letter-section {
+    padding: 30px 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  #typewriter {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-right: 2px solid #333;
+    white-space: normal;
+    overflow: visible;
+    line-height: 1.5;
+    padding: 10px;
+  }
+  
+  /* Mute/Unmute Button */
+  #mute-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 192, 203, 0.7);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    z-index: 1000;
+  }
+  
+  /* Floating Hearts */
+  #heart-container .heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    color: #ff69b4;
+    opacity: 0.8;
+    animation: floatUp linear infinite;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateX(0) translateY(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(100px) translateY(-800px);
+      opacity: 0;
+    }
+  }
+  
+  /* Confetti */
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 105, 180, 0.8);
+    animation: confettiFall 4s linear infinite;
+  }
+  
+  @keyframes confettiFall {
+    0% {
+      transform: translateY(-10px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Modal Styles for Gallery */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  }
+  .modal img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 5px solid #fff;
+  }
+  .modal .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 600px) {
+    .greeting-section h1 {
+      font-size: 2rem;
+    }
+    #quotes-carousel {
+      font-size: 1.2rem;
+    }
+  }
+  
+  #bouquet-image {
+    max-width: 80%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 192, 203, 0.4);
+    transform: scale(0.8);
+  }
+  
+  #bouquet-image.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Animation for bouquet section when scrolled into view */
+  .bouquet-section.in-view .bouquet-flowers {
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .bouquet-section.in-view #bouquet-display {
+    visibility: visible;
+  }
+  
+  .bouquet-section.in-view #bouquet-image {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .video-message-section video {
+      max-width: 90%;
+    }
+    
+    .greeting-section h1 {
+      font-size: 2.2rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      padding-bottom: 100px;
+    }
+    
+    .greeting-section h1 {
+      font-size: 1.8rem;
+    }
+    
+    #quotes-carousel {
+      font-size: 1.2rem;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .video-message-section video {
+      max-width: 100%;
+    }
+    
+    .fancy-btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+    }
+    
+    #typewriter {
+      font-size: 1rem;
+      padding: 5px;
+    }
+    
+    .bouquet-flowers .flower {
+      font-size: 1.5rem;
+    }
+    
+    .slideshow-container {
+      max-width: 100%;
+    }
+    
+    .memory-slide .caption {
+      padding: 5px 0;
+      font-size: 0.9rem;
+    }
+    
+    .dot {
+      height: 8px;
+      width: 8px;
+      margin: 0 3px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .greeting-section h1 {
+      font-size: 1.5rem;
+    }
+    
+    .greeting-section, .quotes-section, .gallery-section, 
+    .video-message-section, .bouquet-section, 
+    .hidden-message-section, .letter-section {
+      padding: 15px 10px;
+    }
+    
+    #mute-btn {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Slideshow Styles - More Minimal */
+  .slideshow-container {
+    max-width: 250px;
+    position: relative;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 192, 203, 0.3);
+    overflow: hidden;
+  }
+  
+  .memory-slide {
+    display: none;
+    text-align: center;
+    animation: fadeEffect 1s;
+    margin: 5px;
+    padding: 0;
+    position: relative;
+    aspect-ratio: 9/16;
+    overflow: hidden;
+  }
+  
+  .memory-slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s ease;
+    margin: 0;
+    display: block;
+    background-color: transparent;
+    
+  }
+  
+  .memory-slide img:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 192, 203, 0.6);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+  
+  .memory-slide .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+  }
+  
+  /* More Minimal Slideshow Dots */
+  .dots-container {
+    text-align: center;
+    padding: 6px 0 0 0;
+    margin-top: 5px;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .active-dot, .dot:hover {
+    background-color: #ff69b4;
+    transform: scale(1.2);
+  }
+  
+  /* Floating animation for dots */
+  .dots-container .dot:nth-child(1) { animation: float 3s ease-in-out infinite; }
+  .dots-container .dot:nth-child(2) { animation: float 3s ease-in-out 0.2s infinite; }
+  .dots-container .dot:nth-child(3) { animation: float 3s ease-in-out 0.4s infinite; }
+  .dots-container .dot:nth-child(4) { animation: float 3s ease-in-out 0.6s infinite; }
+  .dots-container .dot:nth-child(5) { animation: float 3s ease-in-out 0.8s infinite; }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  /* Mobile Responsiveness Improvements */
+  @media (max-width: 768px) {
+    /* Improve slideshow container on mobile */
+    .slideshow-container {
+      padding: 4px;
+      margin: 0 auto;
+      max-width: 55%;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Maintain aspect ratio on mobile */
+    .memory-slide {
+      aspect-ratio: 9/16;
+    }
+  }
+  
+  /* Small Mobile Devices */
+  @media (max-width: 480px) {
+    /* Optimize slideshow for very small screens */
+    .slideshow-container {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      padding: 3px;
+      border-width: 1px;
+    }
+    
+    /* Maintain aspect ratio on small mobile */
+    .memory-slide {
+      aspect-ratio: 9/16;
+    }
+    
+    .memory-slide img {
+      border-width: 0;
+    }
+  }
+  
+  @keyframes fadeEffect {
+    from {opacity: 0.7; transform: scale(0.98);}
+    to {opacity: 1; transform: scale(1);}
+  }
+  
+  @keyframes borderPulse {
+    0% { border-color: rgba(255, 255, 255, 0.8); }
+    50% { border-color: rgba(255, 192, 203, 0.8); }
+    100% { border-color: rgba(255, 255, 255, 0.8); }
+  }
+  
+  .memory-slide.active-slide img {
+    animation: borderPulse 3s ease-in-out;
+  }
+  
+  /* Mobile Responsiveness for Bouquet */
+  @media (max-width: 768px) {
+    #bouquet-image {
+      max-width: 90%;
+      border-radius: 10px;
+    }
+    
+    #bouquet-display {
+      max-width: 400px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #bouquet-image {
+      max-width: 95%;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    #bouquet-display {
+      max-width: 300px;
+    }
+  }
+  

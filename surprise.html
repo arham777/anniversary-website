@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surprise - Happy Anniversary!</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles specifically for the surprise page */
+    .surprise-container {
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .surprise-container h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in;
+    }
+    .surprise-container p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in 1s;
+    }
+    .surprise-container img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      animation: scaleUp 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes scaleUp {
+      from { transform: scale(0.8); }
+      to   { transform: scale(1); }
+    }
+    /* Party Animation Container */
+    .party-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .party-animation .heart {
+      position: absolute;
+      font-size: 30px;
+      color: #ff69b4;
+      animation: partyHeart 4s infinite;
+      opacity: 0.9;
+    }
+    @keyframes partyHeart {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="surprise-container">
+    <h1>Happy Anniversary!</h1>
+    <p id="surprise-message">May our love always be as sweet as this moment.</p>
+    <!-- Random Love Note -->
+    <p id="random-message" style="font-weight: bold; color: #ff1493;"></p>
+    <img src="assets/cake.png" alt="Anniversary Cake">
+  </div>
+  
+  <!-- Party Animations Container -->
+  <div class="party-animation" id="party-animation"></div>
+  
+  <script>
+    // Create party hearts for the surprise page background
+    function createPartyHearts() {
+      const partyContainer = document.getElementById('party-animation');
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.textContent = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDelay = Math.random() * 4 + "s";
+        heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+        partyContainer.appendChild(heart);
+      }
+    }
+    createPartyHearts();
+
+    // Display a random personalized love note
+    const loveNotes = [
+      "Every moment with you is a treasure.",
+      "You are the light of my life and the joy in my heart.",
+      "Our love grows stronger with every passing day.",
+      "Together, we create magic that fills my soul.",
+      "Your smile is my favorite sight, and your love my greatest gift."
+    ];
+    const randomIndex = Math.floor(Math.random() * loveNotes.length);
+    document.getElementById("random-message").textContent = loveNotes[randomIndex];
+  </script>
+</body>
+</html>

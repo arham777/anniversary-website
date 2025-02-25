@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Anniversary</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/audio2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button id="mute-btn">Play Music</button>
+
+  <!-- Decorative Effects Containers -->
+  <div id="confetti-container"></div>
+  <div id="heart-container"></div>
+
+  <!-- Animated Greeting Section -->
+  <header class="greeting-section">
+    <h1 id="greeting-message">Happy Anniversary Begum Sahiba G😚</h1>
+  </header>
+
+  <!-- Love Quotes Carousel -->
+  <section class="quotes-section">
+    <div id="quotes-carousel">
+      <p class="quote">"Love is composed of a single soul inhabiting two bodies." - Aristotle</p>
+    </div>
+  </section>
+
+  <!-- Memories Gallery (Photos & Videos) -->
+  <section class="gallery-section">
+    <h2>Our Beautiful Memories Together</h2>
+    <div class="slideshow-container">
+      <div class="memory-slide fade">
+        <img src="assets/mem/1.jpg" alt="Memory 1">
+        <div class="caption">Our first date</div>
+      </div>
+      
+      <div class="memory-slide fade">
+        <img src="assets/mem/2.jpg" alt="Memory 2">
+        <div class="caption">Vacation together</div>
+      </div>
+      
+      <div class="memory-slide fade">
+        <img src="assets/mem/3.jpg" alt="Memory 3">
+        <div class="caption">Our anniversary dinner</div>
+      </div>
+      
+      <div class="memory-slide fade">
+        <img src="assets/mem/4.jpg" alt="Memory 4">
+        <div class="caption">Weekend getaway</div>
+      </div>
+      
+      <div class="memory-slide fade">
+        <img src="assets/mem/5.jpg" alt="Memory 5">
+        <div class="caption">Special moments</div>
+      </div>
+      
+      <!-- Navigation dots -->
+      <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Message Section -->
+  <section class="video-message-section">
+    <h2>A Special Message for You</h2>
+    <video src="/assets/video.mp4" controls poster="video_poster.jpg" autoplay muted></video>
+  </section>
+
+  <!-- Virtual Bouquet Section -->
+  <section class="bouquet-section">
+    <button id="bouquet-btn" class="fancy-btn">Receive Your Bouquet!</button>
+    <div id="bouquet-display">
+      <h2>A Bouquet of Love Just for You!</h2>
+      <div class="bouquet-flowers">
+         <span class="flower">🌹</span>
+         <span class="flower">🌹</span>
+         <span class="flower">🌹</span>
+         <span class="flower">🌹</span>
+         <span class="flower">🌹</span>
+      </div>
+      <img id="bouquet-image" src="assets/flowers.png" alt="Bouquet">
+    </div>
+  </section>
+
+  <!-- Click for Surprise Section -->
+  <section class="hidden-message-section">
+    <button id="reveal-btn" class="fancy-btn">Click for a Surprise!</button>
+  </section>
+
+  <!-- Typewriter Letter Section -->
+  <section class="letter-section">
+    <h2>A Letter From My Heart</h2>
+    <p id="typewriter"></p>
+  </section>
+
+  <!-- JavaScript for interactivity and animations -->
+  <script src="script.js"></script>
+</body>
+</html>
